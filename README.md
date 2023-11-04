@@ -10,46 +10,43 @@
 ## Dokumentasi
 
 GET `/`
-
 Response:
-
-`{
-  status: "Success",
-  message: "Successfully get all todos',
-  data: [
-    id: 1,
-    judul: "Ini judul",
-    isi: "Ini adalah isinya"
+```
+{
+  "status": "Success", message: "Successfully get all todos',
+  "data": [
+    "id": 1,
+    "judul": "Ini judul",
+    "isi": "Ini adalah isinya"
   ]
-}`
+}
+```
 
 POST `/`
-
 Content-type: application/json
-
 Response:
-
-`{
-  status: "Success",
-  message: "Successfully create todo",
-}`
+```
+{
+  "status": "Success",
+  "message": "Successfully create todo",
+}
+```
 
 PUT `/:id`
-
 Content-type: application/json
-
 Response:
-
-`{
-  status: "Success",
-  message: "Successfully update todo",
-}`
+```
+{
+  "status": "Success",
+  "message": "Successfully update todo",
+}
+```
 
 DELETE `/:id`
-
 Response:
-
-`{
-  status: "Success",
-  message: "Successfully delete todo",
-}`
+```
+{
+  "status": "Success",
+  "message": "Successfully delete todo",
+}
+```
