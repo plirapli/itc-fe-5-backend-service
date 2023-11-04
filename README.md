@@ -15,7 +15,8 @@ Response:
 
 ```
 {
-  "status": "Success", message: "Successfully get all todos',
+  "status": "Success",
+  "message": "Successfully get all todos',
   "data": [
     "id": 1,
     "judul": "Ini judul",
