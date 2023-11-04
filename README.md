@@ -9,7 +9,7 @@
 
 ## Dokumentasi
 
-GET `/`
+GET `/v1/todo`
 
 Response:
 
@@ -27,7 +27,7 @@ Response:
 
 ---
 
-POST `/`
+POST `/v1/todo`
 
 Content-type: application/json
 
@@ -41,7 +41,7 @@ Response:
 
 ---
 
-PUT `/:id`
+PUT `/v1/todo/:id`
 
 Content-type: application/json
 
@@ -56,7 +56,7 @@ Response:
 
 ---
 
-DELETE `/:id`
+DELETE `/v1/todo/:id`
 
 Response:
 
