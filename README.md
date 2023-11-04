@@ -9,8 +9,10 @@
 
 ## Dokumentasi
 
-GET `/`
-Response:
+##### GET `/`
+
+#### Response:
+
 ```
 {
   "status": "Success", message: "Successfully get all todos',
@@ -22,9 +24,11 @@ Response:
 }
 ```
 
-POST `/`
-Content-type: application/json
-Response:
+#### POST `/`
+
+#### Content-type: application/json
+
+#### Response:
 ```
 {
   "status": "Success",
@@ -32,9 +36,12 @@ Response:
 }
 ```
 
-PUT `/:id`
-Content-type: application/json
-Response:
+#### PUT `/:id`
+
+#### Content-type: application/json
+
+#### Response:
+
 ```
 {
   "status": "Success",
@@ -42,11 +49,14 @@ Response:
 }
 ```
 
-DELETE `/:id`
-Response:
+#### DELETE `/:id`
+
+#### Response:
+
 ```
 {
   "status": "Success",
   "message": "Successfully delete todo",
 }
 ```
+
