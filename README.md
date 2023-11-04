@@ -24,6 +24,8 @@ Response:
 }
 ```
 
+---
+
 POST `/`
 
 Content-type: application/json
@@ -35,6 +37,8 @@ Response:
   "message": "Successfully create todo",
 }
 ```
+
+---
 
 PUT `/:id`
 
@@ -48,6 +52,8 @@ Response:
   "message": "Successfully update todo",
 }
 ```
+
+---
 
 DELETE `/:id`
 
