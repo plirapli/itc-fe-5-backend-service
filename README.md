@@ -9,9 +9,9 @@
 
 ## Dokumentasi
 
-##### GET `/`
+GET `/`
 
-#### Response:
+Response:
 
 ```
 {
@@ -24,11 +24,11 @@
 }
 ```
 
-#### POST `/`
+POST `/`
 
-#### Content-type: application/json
+Content-type: application/json
 
-#### Response:
+Response:
 ```
 {
   "status": "Success",
@@ -36,11 +36,11 @@
 }
 ```
 
-#### PUT `/:id`
+PUT `/:id`
 
-#### Content-type: application/json
+Content-type: application/json
 
-#### Response:
+Response:
 
 ```
 {
@@ -49,9 +49,9 @@
 }
 ```
 
-#### DELETE `/:id`
+DELETE `/:id`
 
-#### Response:
+Response:
 
 ```
 {
