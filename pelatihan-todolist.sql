@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2023 at 12:35 PM
+-- Generation Time: Mar 19, 2024 at 12:49 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pelatihan_itc_fe_todo`
+-- Database: `pelatihan-todolist`
 --
 
 -- --------------------------------------------------------
@@ -32,6 +32,14 @@ CREATE TABLE `todo` (
   `judul` varchar(255) NOT NULL,
   `isi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `todo`
+--
+
+INSERT INTO `todo` (`id`, `judul`, `isi`) VALUES
+(1, 'lorem ipsum', 'lorem ipsum dolor sit amet'),
+(2, 'mengerjakan tugas', 'mengerjakan tugasnya novrido');
 
 --
 -- Indexes for dumped tables
@@ -51,7 +59,7 @@ ALTER TABLE `todo`
 -- AUTO_INCREMENT for table `todo`
 --
 ALTER TABLE `todo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
