@@ -25,6 +25,19 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res, next) => {
   try {
     const { judul, isi } = req.body;
+
+    if (judul == "") {
+      const error = new Error(`Judul cannot be empty.`);
+      error.statusCode = 401;
+      throw error;
+    }
+
+    if (isi == "") {
+      const error = new Error(`Isi cannot be empty.`);
+      error.statusCode = 401;
+      throw error;
+    }
+
     const command = `INSERT INTO todo (judul, isi) VALUES (?, ?)`;
     const [{ insertId }] = await connection.promise().query(command, [judul, isi]);
 
@@ -45,6 +58,19 @@ router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const { judul, isi } = req.body;
+
+    if (judul == "") {
+      const error = new Error(`Judul cannot be empty.`);
+      error.statusCode = 401;
+      throw error;
+    }
+
+    if (isi == "") {
+      const error = new Error(`Isi cannot be empty.`);
+      error.statusCode = 401;
+      throw error;
+    }
+
     const command = `UPDATE todo SET judul = ?, isi = ? WHERE id = ?`
     const update = await connection.promise().query(command, [judul, isi, id]);
 
