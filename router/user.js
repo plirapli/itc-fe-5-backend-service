@@ -27,7 +27,7 @@ router.get("/:nim", async (req, res, next) => {
     const { nim } = req.params
 
     const command = `SELECT * FROM users WHERE nim=?`;
-    const [[data]] = await connection.promise().query(command, [nim])
+    const [data] = await connection.promise().query(command, [nim])
 
     if (data.length <= 0) {
       const error = new Error(`User ${nim} not found`)
@@ -38,7 +38,7 @@ router.get("/:nim", async (req, res, next) => {
     res.status(200).json({
       status: "Success",
       message: 'Successfully get user',
-      data: data
+      data: data[0]
     })
   } catch (err) {
     res.status(err.statusCode || 500).json({
