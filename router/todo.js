@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../config/database.js');
 
-// GET /todo
+// GET /todos
 router.get("/", async (req, res) => {
   try {
     const command = `SELECT * FROM todo`;
@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
   }
 })
 
-// POST /todp
+// POST /todos
 router.post("/", async (req, res, next) => {
   try {
     const { judul, isi } = req.body;
@@ -53,7 +53,7 @@ router.post("/", async (req, res, next) => {
   }
 })
 
-// PUT /todo/:id
+// PUT /todos/:id
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -79,14 +79,14 @@ router.put("/:id", async (req, res) => {
       message: "Successfully update todo",
     });
   } catch (err) {
-    res.status(500).json({
+    res.status(err.statusCode || 500).json({
       status: "Error",
-      message: err,
+      message: err.message,
     });
   }
 });
 
-// DELETE /todo/:id
+// DELETE /todos/:id
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -98,13 +98,11 @@ router.delete("/:id", async (req, res) => {
       message: "Successfully delete todo",
     });
   } catch (err) {
-    res.status(500).json({
+    res.status(err.statusCode || 500).json({
       status: "Error",
-      message: err,
+      message: err.message,
     });
   }
 });
-
-
 
 module.exports = router;
