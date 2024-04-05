@@ -10,7 +10,9 @@
 
 ## Dokumentasi
 
-GET `/v1/todo`
+### Todos
+
+GET `/v1/todos`
 
 Response:
 
@@ -33,7 +35,7 @@ Status Code: 200
 
 ---
 
-POST `/v1/todo`
+POST `/v1/todos`
 
 Content-type: application/json
 
@@ -59,13 +61,13 @@ Status Code: 201
 
 ---
 
-PUT `/v1/todo/:id`
+PUT `/v1/todos/:id`
 
 Content-type: application/json
 
 Request Body:
 
-Status Code: 201
+Status Code: 200
 
 ```
 {
@@ -85,7 +87,26 @@ Response:
 
 ---
 
-DELETE `/v1/todo/:id`
+DELETE `/v1/todos/:id`
+
+Response:
+
+Status Code: 204
+
+```
+{
+  "status": "Success",
+  "message": "Successfully delete todo",
+}
+```
+
+---
+
+### Users
+
+Get all users
+
+Endpoint: GET `/v1/users`
 
 Response:
 
@@ -94,6 +115,45 @@ Status Code: 200
 ```
 {
   "status": "Success",
-  "message": "Successfully delete todo",
+  "message": "Successfully get all users',
+  "data": [
+    {
+      "id": 1,
+      "nama": "Seva Giantama Farel",
+      "nim": "123210061"
+    },
+    {
+      "id": 2,
+      "nama": "Muhammad Rafli",
+      "nim": "123210078"
+    },
+    ...
+  ]
+}
+```
+
+---
+
+Get user by NIM
+
+Endpoint: GET `/v1/users/:nim`
+
+Response:
+
+Status Code: 200
+
+```
+{
+  "status": "Success",
+  "message": "Successfully get user',
+  "data": {
+    "id": 2,
+    "nama": "Muhammad Rafli",
+    "nim": "123210078",
+    "divisi": "Vice Chairman",
+    "email": "rafliyulistiawan@gmail.com",
+    "angkatan": "Informatika 2021",
+    "foto": "https://ik.imagekit.io/ckhejgn1v/anggota_itc/tr:f-auto,w-300,q-40/muh_rafli.jpeg?updatedAt=1688139465943"
+  }
 }
 ```
