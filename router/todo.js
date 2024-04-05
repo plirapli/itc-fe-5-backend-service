@@ -93,7 +93,7 @@ router.delete("/:id", async (req, res) => {
     const command = `DELETE FROM todo WHERE id=?`;
     const update = await connection.promise().query(command, [id]);
 
-    res.status(200).json({
+    res.status(204).json({
       status: "Success",
       message: "Successfully delete todo",
     });
