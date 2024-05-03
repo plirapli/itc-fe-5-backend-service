@@ -102,6 +102,122 @@ Status Code: 204
 
 ---
 
+### Todos (Secured Version)
+
+GET `/v1/todos_auth`
+
+Request Header:
+
+```
+Authorization: Bearer a1b2c3d4e5f6
+```
+
+Response:
+
+Status Code: 200
+
+```
+{
+  "status": "Success",
+  "message": "Successfully get all todos',
+  "data": [
+    {
+      "id": 1,
+      "judul": "Ini judul",
+      "isi": "Ini adalah isinya"
+    },
+    ...
+  ]
+}
+```
+
+---
+
+POST `/v1/todos_auth`
+
+Content-type: application/json
+
+Request Header:
+
+```
+Authorization: Bearer a1b2c3d4e5f6
+```
+
+Request Body:
+
+```
+{
+  "judul": "mengerjakan tugas",
+  "isi": "mengerjakan tugasnya novrido"
+}
+```
+
+Response:
+
+Status Code: 201
+
+```
+{
+  "status": "Success",
+  "message": "Successfully create todo",
+}
+```
+
+---
+
+PUT `/v1/todos_auth/:id`
+
+Content-type: application/json
+
+Request Header:
+
+```
+Authorization: Bearer a1b2c3d4e5f6
+```
+
+Request Body:
+
+Status Code: 200
+
+```
+{
+  "judul": "mengerjakan tugas",
+  "isi": "mengerjakan tugasnya novrido"
+}
+```
+
+Response:
+
+```
+{
+  "status": "Success",
+  "message": "Successfully update todo",
+}
+```
+
+---
+
+DELETE `/v1/todos_auth/:id`
+
+Request Header:
+
+```
+Authorization: Bearer a1b2c3d4e5f6
+```
+
+Response:
+
+Status Code: 204
+
+```
+{
+  "status": "Success",
+  "message": "Successfully delete todo",
+}
+```
+
+---
+
 ### Users
 
 Get all users
