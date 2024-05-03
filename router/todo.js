@@ -1,57 +1,56 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const connection = require('../config/database.js');
+const connection = require("../config/database.js");
 
 // GET /todos
 router.get("/", async (req, res) => {
   try {
-    const command = `SELECT * FROM todo`;
-    const data = await connection.promise().query(command)
+    const command = `SELECT * FROM todos`;
+    const data = await connection.promise().query(command);
 
     res.status(200).json({
       status: "Success",
-      message: 'Successfully get all todos',
-      data: data[0]
-    })
-  } catch (error) {
-    return res.status(500).json({
+      message: "Successfully get all todos",
+      data: data[0],
+    });
+  } catch (err) {
+    return res.status(err.statusCode || 500).json({
       status: "Error",
-      message: err,
-    })
+      message: err.message,
+    });
   }
-})
+});
 
 // POST /todos
 router.post("/", async (req, res, next) => {
   try {
     const { judul, isi } = req.body;
 
-    if (judul == "") {
+    if (!judul) {
       const error = new Error(`Judul cannot be empty.`);
       error.statusCode = 401;
       throw error;
     }
-
-    if (isi == "") {
+    if (!isi) {
       const error = new Error(`Isi cannot be empty.`);
       error.statusCode = 401;
       throw error;
     }
 
-    const command = `INSERT INTO todo (judul, isi) VALUES (?, ?)`;
-    const [{ insertId }] = await connection.promise().query(command, [judul, isi]);
+    const command = `INSERT INTO todos (judul, isi) VALUES (?, ?)`;
+    await connection.promise().query(command, [judul, isi]);
 
     res.status(201).json({
       status: "Success",
       message: "Successfully create todo",
     });
   } catch (err) {
-    res.status(500).json({
+    res.status(err.statusCode || 500).json({
       status: "Error",
-      message: err,
+      message: err.message,
     });
   }
-})
+});
 
 // PUT /todos/:id
 router.put("/:id", async (req, res) => {
@@ -59,20 +58,20 @@ router.put("/:id", async (req, res) => {
     const { id } = req.params;
     const { judul, isi } = req.body;
 
-    if (judul == "") {
+    if (!judul) {
       const error = new Error(`Judul cannot be empty.`);
       error.statusCode = 401;
       throw error;
     }
 
-    if (isi == "") {
+    if (!isi) {
       const error = new Error(`Isi cannot be empty.`);
       error.statusCode = 401;
       throw error;
     }
 
-    const command = `UPDATE todo SET judul = ?, isi = ? WHERE id = ?`
-    const update = await connection.promise().query(command, [judul, isi, id]);
+    const command = `UPDATE todos SET judul = ?, isi = ? WHERE id = ?`;
+    await connection.promise().query(command, [judul, isi, id]);
 
     res.status(200).json({
       status: "Success",
@@ -90,8 +89,8 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const command = `DELETE FROM todo WHERE id=?`;
-    const update = await connection.promise().query(command, [id]);
+    const command = `DELETE FROM todos WHERE id=?`;
+    await connection.promise().query(command, [id]);
 
     res.status(204).json({
       status: "Success",
