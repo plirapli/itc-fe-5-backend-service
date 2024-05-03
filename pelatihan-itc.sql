@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 05, 2024 at 08:09 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Host: localhost
+-- Generation Time: May 03, 2024 at 06:30 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,28 +18,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pelatihan-todolist`
+-- Database: `pelatihan-itc`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `todo`
+-- Table structure for table `todos`
 --
 
-CREATE TABLE `todo` (
+CREATE TABLE `todos` (
   `id` int(11) NOT NULL,
   `judul` varchar(255) NOT NULL,
   `isi` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `todo`
+-- Dumping data for table `todos`
 --
 
-INSERT INTO `todo` (`id`, `judul`, `isi`) VALUES
-(1, 'lorem ipsum', 'lorem ipsum dolor sit amet'),
-(2, 'mengerjakan tugas', 'mengerjakan tugasnya novrido');
+INSERT INTO `todos` (`id`, `judul`, `isi`) VALUES
+(2, 'mengerjakan tugas', 'mengerjakan tugasnya novrido'),
+(3, 'asdasd', 'asdasdasd');
 
 -- --------------------------------------------------------
 
@@ -55,7 +55,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `angkatan` varchar(32) NOT NULL,
   `foto` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -80,9 +80,9 @@ INSERT INTO `users` (`id`, `nama`, `nim`, `divisi`, `email`, `angkatan`, `foto`)
 --
 
 --
--- Indexes for table `todo`
+-- Indexes for table `todos`
 --
-ALTER TABLE `todo`
+ALTER TABLE `todos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -96,10 +96,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `todo`
+-- AUTO_INCREMENT for table `todos`
 --
-ALTER TABLE `todo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `todos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
