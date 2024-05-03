@@ -2,7 +2,7 @@
 
 1. Clone/Download repository ini, kemudian buka lewat kode editor.
 2. Jalankan **Apache** dan **MySQL** melalui xampp
-3. Buatlah sebuah database bernama "pelatihan-todolist", kemudian import database bernama `pelatihan-todolist.sql` yang berada pada projek ini ke dalam **MySQL**
+3. Buatlah sebuah database bernama "pelatihan-itc", kemudian import database bernama `pelatihan-itc.sql` yang berada pada projek ini ke dalam **MySQL**
 4. Kembali ke folder projek, Copy file bernama `.env.example` dan paste menjadi `.env`
 5. Masuk ke terminal atau cmd. Pastikan terminal atau cmd berada pada root direktori projek.
 6. Install dependency dengan cara mengetik `npm i` di terminal atau cmd, tunggu sampai selesai.
